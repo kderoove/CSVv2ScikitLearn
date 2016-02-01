@@ -1,0 +1,9 @@
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_B.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_B.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_B.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_C.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_C.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_C.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_DUSG.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_DUSG.root for training
+INFO:toy_diagnostics] processing file /user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_DUSG.root for training
