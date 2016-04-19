@@ -7,70 +7,47 @@ import array
 
 # LR training variables
 training_vars_float = [
-  #"flavour",
-  #"vertexCategory",
-  #"vertexLeptonCategory",
-  #"jetPt",
-  #"trackJetPt",
-  #"jetEta",
-  "trackSip2dSig_0", "trackSip2dSig_1",#"trackSip2dSig_2",
-  "trackSip3dSig_0", "trackSip3dSig_1",#"trackSip3dSig_2",
-  #"trackSip2dVal_0", "trackSip2dVal_1", "trackSip2dVal_2",
-  #"trackSip3dVal_0", "trackSip3dVal_1", "trackSip3dVal_2",
-  "trackPtRel_0", "trackPtRel_1",# "trackPtRel_2",
-  "trackPPar_0", "trackPPar_1",# "trackPPar_2",
-  "trackEtaRel_0","trackEtaRel_1",# "trackEtaRel_2",
-  "trackDeltaR_0", "trackDeltaR_1",# "trackDeltaR_2",
-  "trackPtRatio_0", "trackPtRatio_1",# "trackPtRatio_2",
-  "trackPParRatio_0", "trackPParRatio_1",# "trackPParRatio_2",
-  "trackJetDist_0","trackJetDist_1",# "trackJetDist_2",
-  "trackDecayLenVal_0", "trackDecayLenVal_1",# "trackDecayLenVal_2",
-  "vertexMass_0",
-  "vertexEnergyRatio_0",
-  "trackSip2dSigAboveCharm_0",
-  "trackSip3dSigAboveCharm_0",
-  "flightDistance2dSig_0",
-  "flightDistance3dSig_0",
-  #"flightDistance2dVal_0",
-  #"flightDistance3dVal_0",
-  "trackSumJetEtRatio",
-  "vertexJetDeltaR_0",
-  "trackSumJetDeltaR",
-  #"trackSip2dValAboveCharm_0",
-  #"trackSip3dValAboveCharm_0",
-  #"vertexFitProb_0",
-  #"chargedHadronEnergyFraction",
-  #"neutralHadronEnergyFraction",
-  #"photonEnergyFraction",
-  #"electronEnergyFraction",
-  #"muonEnergyFraction",
-  "massVertexEnergyFraction_0",
-  "vertexBoostOverSqrtJetPt_0",
-  "leptonPtRel_0","leptonPtRel_1",#"leptonPtRel_2",
-  "leptonSip3d_0","leptonSip3d_1",#"leptonSip3d_2",
-  "leptonDeltaR_0","leptonDeltaR_1",#"leptonDeltaR_2",
-  "leptonRatioRel_0","leptonRatioRel_1",#"leptonRatioRel_2",
-  "leptonEtaRel_0","leptonEtaRel_1",#"leptonEtaRel_2",
-  "leptonRatio_0","leptonRatio_1",#"leptonRatio_2",
-  "vertexNTracks_0",
-  "jetNSecondaryVertices",
-  "jetNTracks",
-  ]
-
-training_vars_int = [
-  #"vertexNTracks_0",
-  #"jetNSecondaryVertices",
-  #"jetNTracks",
-  #"chargedHadronMultiplicity",
-  #"neutralHadronMultiplicity",
-  #"photonMultiplicity",
-  #"electronMultiplicity",
-  #"muonMultiplicity",
-  #"hadronMultiplicity",
-  #"hadronPhotonMultiplicity",
-  #"totalMultiplicity",
-  ]
-
+  'Jet_pt',
+  'Jet_eta',
+  'TagVarCSV_jetNTracks',
+  'TagVarCSV_trackSip3dSig_0',
+  'TagVarCSV_trackSip3dSig_1',
+  'TagVarCSV_trackSip3dSig_2',
+  'TagVarCSV_trackSip3dSig_3',
+  'TagVarCSV_trackSip3dSigAboveCharm',
+	'TagVarCSV_trackPtRel_0',
+	'TagVarCSV_trackPtRel_1',
+	'TagVarCSV_trackPtRel_2',
+	'TagVarCSV_trackPtRel_3',
+	'TagVarCSV_trackEtaRel_0',
+	'TagVarCSV_trackEtaRel_1',
+	'TagVarCSV_trackEtaRel_2',
+	'TagVarCSV_trackEtaRel_3',
+	'TagVarCSV_trackDeltaR_0',
+	'TagVarCSV_trackDeltaR_1',
+	'TagVarCSV_trackDeltaR_2',
+	'TagVarCSV_trackDeltaR_3',
+	'TagVarCSV_trackPtRatio_0',
+	'TagVarCSV_trackPtRatio_1',
+	'TagVarCSV_trackPtRatio_2',
+	'TagVarCSV_trackPtRatio_3',
+	'TagVarCSV_trackJetDist_0',
+	'TagVarCSV_trackJetDist_1',
+	'TagVarCSV_trackJetDist_2',
+	'TagVarCSV_trackJetDist_3',
+	'TagVarCSV_trackDecayLenVal_0',
+	'TagVarCSV_trackDecayLenVal_1',
+	'TagVarCSV_trackDecayLenVal_2',
+  'TagVarCSV_trackDecayLenVal_3',
+  'TagVarCSV_trackSumJetEtRatio',
+  'TagVarCSV_trackSumJetDeltaR',
+  'TagVarCSV_vertexMass',
+  'TagVarCSV_vertexNTracks',
+  'TagVarCSV_vertexEnergyRatio',
+  'TagVarCSV_vertexJetDeltaR',
+  'TagVarCSV_flightDistance2dSig',
+  'TagVarCSV_jetNSecondaryVertices',
+]
 
 
 def train(bdtoptions):
@@ -81,23 +58,23 @@ def train(bdtoptions):
 
  
   files = [
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVNoVertex_C.root",
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVPseudoVertex_C.root",
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVRecoVertex_C.root",
-    #"/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVNoVertex_B.root",
-    #"/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVPseudoVertex_B.root",
-    #"/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVRecoVertex_B.root",
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVNoVertex_DUSG.root",
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVPseudoVertex_DUSG.root",
-    "/user/smoortga/CTag/TMVActag_v1/FlatTrees_SL_7_5_1_WithNewWeights/QCD/skimmed_20k_eachptetabin_CombinedSVRecoVertex_DUSG.root"
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_B.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_B.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_B.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_C.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_C.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_C.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVRecoVertex_DUSG.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVPseudoVertex_DUSG.root",
+"/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/data_trees/flat_trees/qcd/flat_skimmed_20k_eachptetabin_CombinedSVNoVertex_DUSG.root"
     ]
   
   for f in files:
       print 'Opening file %s' %f
       tree.Add('%s' %f)
   
-  signal_selection = 'flavour==4' # c
-  background_selection = 'flavour!=4 && flavour!=5' # no c and no b --> DUSG
+  signal_selection = 'Jet_flavour==5' # c
+  background_selection = 'Jet_flavour!=5' # no c and no b --> DUSG
 
   num_pass = tree.GetEntries(signal_selection)
   num_fail = tree.GetEntries(background_selection)
@@ -152,9 +129,9 @@ def train(bdtoptions):
 def trainMultiClass():
 
   classes = [
-    ('flavour==5', 'B'),
-    ('flavour==4', 'C'),
-    ('flavour!=5 && flavour!=4', 'DUSG')
+    ('Jet_flavour==5', 'B'),
+    ('Jet_flavour==4', 'C'),
+    ('Jet_flavour!=5 && Jet_flavour!=4', 'DUSG')
   ]
 
   for cl in classes:
@@ -209,7 +186,7 @@ def read(inDirName, inFileName):
   
   TMVA_tools = ROOT.TMVA.Tools.Instance()
 
-  tree = ROOT.TChain('tree')
+  tree = ROOT.TChain('ttree')
 
   tree.Add('%s/%s' %(inDirName, inFileName))
 
@@ -219,12 +196,9 @@ def read(inDirName, inFileName):
   for var in training_vars_float:
     varDict[var] = array.array('f',[0])
     reader.AddVariable(var, varDict[var])
-  for var in training_vars_int:
-    varDict[var] = array.array('f',[0])
-    reader.AddVariable(var, varDict[var])
 
 
-  reader.BookMVA("BDTG","weights/TMVAClassification_BDTG.weights.xml")
+  reader.BookMVA("BDTG","TMVAClassification_BDTG.weights.xml")
 
   bdtOuts = []
   flavours = []
@@ -242,15 +216,15 @@ def read(inDirName, inFileName):
       varDict[var][0] = getattr(tree, var)
 
     bdtOutput = reader.EvaluateMVA("BDTG")
-    flavour = tree.flavour
+    Jet_flavour = tree.Jet_flavour
     bdtOuts.append(bdtOutput)
-    flavours.append(flavour)
-    categories.append(tree.vertexCategory)
-    jetPts.append(tree.jetPt)
-    jetEtas.append(tree.jetEta)
+    flavours.append(Jet_flavour)
+    categories.append(tree.TagVarCSV_vertexCategory)
+    jetPts.append(tree.Jet_pt)
+    jetEtas.append(tree.Jet_eta)
 
     if jentry%10000 == 0:
-      print jentry, bdtOutput, flavour
+      print jentry, bdtOutput, Jet_flavour
 
   writeSmallTree = True
 
@@ -260,24 +234,26 @@ def read(inDirName, inFileName):
     BDTG = array.array('f',[0])
     flav = array.array('f',[0])
     cat = array.array('f',[0])
-    jetPt = array.array('f',[0])
-    jetEta = array.array('f',[0])
+    Jet_pt = array.array('f',[0])
+    Jet_eta = array.array('f',[0])
+    Jet_CSVIVF = array.array('f',[0])
 
     fout = ROOT.TFile('trainPlusBDTG_%s.root'%(inFileName.replace(".root","")), 'RECREATE')
-    outTree = ROOT.TTree( 'tree', 'b-tagging training tree' )
+    outTree = ROOT.TTree( 'ttree', 'b-tagging training tree' )
     outTree.Branch('BDTG', BDTG, 'BDTG/F')
-    outTree.Branch('flavour', flav, 'flavour/F')
-    outTree.Branch('vertexCategory', cat, 'vertexCategory/F')
-    outTree.Branch('jetPt', jetPt, 'jetPt/F')
-    outTree.Branch('jetEta', jetEta, 'jetEta/F')
+    outTree.Branch('Jet_flavour', flav, 'Jet_flavour/F')
+    outTree.Branch('TagVarCSV_vertexCategory', cat, 'TagVarCSV_vertexCategory/F')
+    outTree.Branch('Jet_pt', Jet_pt, 'Jet_pt/F')
+    outTree.Branch('Jet_eta', Jet_eta, 'Jet_eta/F')
+    outTree.Branch('Jet_CSVIVF', Jet_CSVIVF, 'Jet_CSVIVF/F')
 
 
     for i in range(len((bdtOuts))):
       BDTG[0] = bdtOuts[i]
       flav[0] = flavours[i]
       cat[0] = categories[i]
-      jetPt[0] = jetPts[i]
-      jetEta[0] = jetEtas[i]
+      Jet_pt[0] = jetPts[i]
+      Jet_eta[0] = jetEtas[i]
       if i%10000==0:
         print i, bdtOuts[i], flavours[i]
       outTree.Fill()
@@ -292,18 +268,17 @@ def readParallel():
   ROOT.gROOT.SetBatch(True)
   parallelProcesses = multiprocessing.cpu_count()
   
-  #inDirName="dcap://t3se01.psi.ch:22125//pnfs/psi.ch/cms/trivcat/store/user/vlambert/TMVA/ctag_CSVMLP_IVFadapv1/Weighted/"
-  inDirName="/user/smoortga/CTag/testSklearnToTMVA/src/CTagTraining/scripts/data/flat_trees/ttjets_merged"
+  inDirName="/user/kderoove/bTagging/MoveCSVv2ToMVApackage/ScikitLearn/FlatTrees_tt/"
   files = [
-    "CombinedSVNoVertex_B.root",
-    "CombinedSVNoVertex_C.root",
-    "CombinedSVNoVertex_DUSG.root",
-    "CombinedSVPseudoVertex_B.root",
-    "CombinedSVPseudoVertex_C.root",
-    "CombinedSVPseudoVertex_DUSG.root",
-    "CombinedSVRecoVertex_B.root",
-    "CombinedSVRecoVertex_C.root",
-    "CombinedSVRecoVertex_DUSG.root"
+    "skimmed_20k_eachptetabin_CombinedSVNoVertex_B.root",
+    "skimmed_20k_eachptetabin_CombinedSVNoVertex_C.root",
+    "skimmed_20k_eachptetabin_CombinedSVNoVertex_DUSG.root",
+    "skimmed_20k_eachptetabin_CombinedSVPseudoVertex_B.root",
+    "skimmed_20k_eachptetabin_CombinedSVPseudoVertex_C.root",
+    "skimmed_20k_eachptetabin_CombinedSVPseudoVertex_DUSG.root",
+    "skimmed_20k_eachptetabin_CombinedSVRecoVertex_B.root",
+    "skimmed_20k_eachptetabin_CombinedSVRecoVertex_C.root",
+    "skimmed_20k_eachptetabin_CombinedSVRecoVertex_DUSG.root"
     ]
   #files ["CombinedSVNoVertex_B.root"]
 
