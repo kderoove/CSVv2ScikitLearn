@@ -333,7 +333,7 @@ void Filter_qcd() {
     	    if(debug) cout << "Passed G flavour" << endl;
 		}
 		
-		else if(flavour == 4)//C-jets
+		else if(fabs(flavour) == 4)//C-jets
 		{
 	        if((jetpt>=ptbins[0] && jetpt<ptbins[1]) && (fabs(jeteta)>=etabins[0] && fabs(jeteta)<etabins[1]))
 			{
@@ -433,7 +433,7 @@ void Filter_qcd() {
     	    if(debug) cout << "Passed C flavour" << endl;
 		}
 
-		else if(flavour == 5)//B-jets
+		else if(fabs(flavour) == 5)//B-jets
 		{
 	        if((jetpt>=ptbins[0] && jetpt<ptbins[1]) && (fabs(jeteta)>=etabins[0] && fabs(jeteta)<etabins[1]))
 			{
